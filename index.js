@@ -277,7 +277,7 @@ function getCarInfoById(cars, id) {
   for(let i = 0; i < cars.length; i++){
     if(cars[i].id === id) car = cars[i];
   }
-  return `This is a ${car.car_make} ${car.car_model}`
+  return `This is a ${car.car_make} ${car.car_model}`;
 }
 
 /**
@@ -294,8 +294,12 @@ function getCarInfoById(cars, id) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(cars, maxYear) {
+  let olderCars = [];
+  for(let i = 0; i < cars.length; i++){
+    if(cars[i].car_year <= maxYear) olderCars.push(cars[i]);
+  }
+  return olderCars;
 }
 
 /**
