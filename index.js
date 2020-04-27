@@ -272,8 +272,12 @@ function getModelYears(cars) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(cars, id) {
+  let car;
+  for(let i = 0; i < cars.length; i++){
+    if(cars[i].id === id) car = cars[i];
+  }
+  return `This is a ${car.car_make} ${car.car_model}`
 }
 
 /**
